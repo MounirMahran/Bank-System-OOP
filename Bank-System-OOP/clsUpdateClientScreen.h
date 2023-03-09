@@ -1,0 +1,88 @@
+#pragma once
+#include <iostream>
+#include "clsBankClient.h"
+#include "clsInputValidate.h"
+#include "clsMainScreen.h"
+class clsUpdateClientScreen : protected clsMainScreen
+{
+private:
+	static void _ReadClientData(clsBankClient& Client) {
+
+
+		Client.FirstName = clsInputValidate::ReadString("Please enter the client first name");
+		Client.LastName = clsInputValidate::ReadString("Please enter the client last name");
+		Client.Email = clsInputValidate::ReadString("Please enter the client email");
+		Client.Phone = clsInputValidate::ReadString("Please enter the client phone");
+		Client.PinCode = clsInputValidate::ReadString("Please enter the client pincode");
+		cout << "Please enter the client account balance" << endl;
+		Client.AccountBalance = clsInputValidate::ReadDblNumber();
+
+	}
+
+	static void _PrintClientCard(clsBankClient Client) {
+		cout << "Client Card" << endl;
+		cout << "____________________________\n";
+		cout << "\nFirst Name      : " << Client.FirstName;
+		cout << "\nLast Name       : " << Client.LastName;
+		cout << "\nFull            : " << Client.FullName();
+		cout << "\nEmail           : " << Client.Email;
+		cout << "\nPhone           : " << Client.Phone;
+		cout << "\nAccount Number  : " << Client.AccountNumber();
+		cout << "\nPinCode         : " << Client.PinCode;
+		cout << "\nAccount Balance : " << Client.AccountBalance;
+		cout << "\n____________________________\n";
+	}
+
+public:
+	static void UpdateClient() {
+		string AccountNumber = "";
+
+		string Title = "Update Client";
+
+		_ShowMainScreen(Title);
+
+		AccountNumber = clsInputValidate::ReadString("Please enter an account number");
+
+		while (!clsBankClient::IsClientExist(AccountNumber)) {
+			cout << "WRONG ACCOUNT NUMBER, Please enter a valid account number" << endl;
+			cin >> AccountNumber;
+		}
+
+		clsBankClient Client = clsBankClient::Find(AccountNumber);
+		_PrintClientCard(Client);
+		cout << endl;
+
+		char Del = clsInputValidate::ReadCharacter("\nAre you sure you want to update? Y/N\n");
+
+		if (toupper(Del) == 'Y'){
+
+			cout << "\nNew Client Data" << endl;
+			cout << "________________________" << endl;
+
+			_ReadClientData(Client);
+
+			clsBankClient::enSaveResults Result;
+
+			Result = Client.Save();
+
+			switch (Result)
+			{
+			case clsBankClient::svFailedEmptyObject:
+				cout << "Failed update because of empty object" << endl;
+				break;
+			case clsBankClient::svSucceeded:
+				cout << "Successful update" << endl;
+				break;
+			}
+
+			_PrintClientCard(Client);
+		}
+
+		else {
+			cout << "Account had not been updated" << endl;
+		}
+
+
+	}
+};
+

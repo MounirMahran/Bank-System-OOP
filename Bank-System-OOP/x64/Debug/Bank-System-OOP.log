@@ -1,0 +1,15 @@
+﻿  Bank-System-OOP.cpp
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsString.h(38,1): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsString.h(43,1): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsString.h(55,1): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsString.h(192,1): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsString.h(323,1): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsString.h(371,1): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsInputValidate.h(103,14): warning C4244: 'initializing': conversion from 'double' to 'short', possible loss of data
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsInputValidate.h(106,23): warning C4244: '=': conversion from 'double' to 'short', possible loss of data
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsTotalBalancesScreen.h(45,92): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsTransferScreen.h(52,16): warning C4244: 'initializing': conversion from 'double' to 'short', possible loss of data
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsBankClient.h(284): warning C4715: 'clsBankClient::Save': not all control paths return a value
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsUtil.h(201): warning C4715: 'clsUtil::NumberToText': not all control paths return a value
+C:\Users\DELL\source\repos\8-Bank-System-OOP\Bank-System-OOP\clsUser.h(281): warning C4715: 'clsUser::Save': not all control paths return a value
+  Bank-System-OOP.vcxproj -> C:\Users\DELL\source\repos\8-Bank-System-OOP\x64\Debug\Bank-System-OOP.exe
